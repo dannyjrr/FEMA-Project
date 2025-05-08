@@ -1,0 +1,117 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FederalEmergencyManagementAgency/login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            text-align: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 25%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 25%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Federal Emergency Management Agency</h1>
+    </header>
+    <nav>
+        <a href="FEMAhome.html">Home</a>
+        <a href="FEMAservices.html">Services</a>
+        <a href="FEMAmissing.html">Missing People</a>
+        <a href="FEMAlogin.html">Login</a>
+    </nav>
+  <div class="container">
+         <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+</div>
+
+
+<script>
+  function validateForm() {
+    var username = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    if (username.trim() === '' || password.trim() === '') {
+      document.getElementById('errorMessage').textContent = 'Please fill out all fields.';
+      return false;
+    }
+
+    // Perform login authentication here (this is just a placeholder)
+    if (username === 'cc' && password === 'password') {
+      // Redirect to a different site after successful login
+      window.location.href = 'FEMAorders.html'; // Replace 'https://example.com' with the URL of the site you want to redirect to
+      return false; // Prevent default form submission
+    }
+    else if(username === 'trucker' && password === '12345'){
+        window.location.href = 'table.html';
+        return false;
+    }
+    else {
+      document.getElementById('errorMessage').textContent = 'Invalid username or password.';
+      return false;
+    }
+  }
+</script>
+
+</body>
+</html>
